@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   # Login Page
   #get 'login', to:'pages#login'
   get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  post 'message', to: 'messages#create'
+
+  mount ActionCable.server, at: '/cable'
 end
