@@ -15,34 +15,15 @@
         <div class="content">
           <div class="ui feed">
             <h4 class="ui fuzzy wuzzy brown header">Message</h4>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                   <em>Elliot Fu</em>: test message
+            <% @messages.each do |message| %>
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                     <em><%= message.user.username %></em>: <%= message.body %>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                   <em>Stevie Feliciano</em>: test message
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                   <em>Helen Troy</em>: test message
-                </div>
-              </div>
-            </div>
-            <div class="event">
-              <div class="content">
-                <div class="summary">
-                   <em>Christian Rocha</em>: test message
-                </div>
-              </div>
-            </div>
+            <% end %>
           </div>
         </div>
         <div class="extra content">
